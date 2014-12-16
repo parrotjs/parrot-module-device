@@ -16,13 +16,17 @@ pkg        = require './package.json'
 
 path =
   core:
-    src      : 'source/parrot.myModule.coffee'
-    debug    : 'parrot.myModule.develop.js'
-    standard : 'parrot.myModule.js'
+    src      : 'source/parrot.device.coffee'
+    debug    : 'parrot.device.develop.js'
+    standard : 'parrot.device.js'
     dist     : 'dist'
 
+  dependency:
+    ratio  : 'components/aspect-ratio/dist/aspect-ratio.js'
+    parser : 'components/ua-parser-js/dist/ua-parser.min.js'
+
   test:
-    src   : 'test/source/test.myModule.coffee'
+    src   : 'test/source/test.device.coffee'
     dist  : 'test/dist'
     index : 'test/index.html'
 
@@ -47,7 +51,8 @@ gulp.task 'develop', ->
   return
 
 gulp.task 'standard', ->
-  gulp.src "#{path.core.dist}/#{path.core.debug}"
+  dep = path.dependency
+  gulp.src [dep.ratio, dep.parser, "#{path.core.dist}/#{path.core.debug}"]
   .pipe concat path.core.standard
   .pipe uglify()
   .pipe header banner, pkg: pkg
