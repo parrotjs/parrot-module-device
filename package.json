@@ -25,7 +25,13 @@
     "node": "*"
   },
   "homepage": "https://github.com/parrotjs/parrot-module-device",
-  "keywords": [],
+  "keywords": [
+    "parrot",
+    "device",
+    "mobile",
+    "screen",
+    "detection"
+  ],
   "license": "MIT",
   "main": "./index.js",
   "repository": "parrotjs/parrot-module-device"
