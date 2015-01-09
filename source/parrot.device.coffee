@@ -39,7 +39,7 @@ parrot.$ ->
 
     parrot.device.noDetection = ->
       el = document.body
-      for property in ['lang', 'os', 'device', 'orientation', 'screen', "retina"]
+      for property in ['lang', 'os', 'device', 'orientation', 'screen', 'retina']
         delete el.dataset[property]
 
   do initialize

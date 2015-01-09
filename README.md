@@ -2,13 +2,13 @@
 
 [![Dependency status](http://img.shields.io/david/parrotjs/parrot-module-device.svg?style=flat)](https://david-dm.org/parrotjs/parrotjs)
 [![Dev Dependencies Status](http://img.shields.io/david/dev/parrotjs/parrot-module-device.svg?style=flat)](https://david-dm.org/parrotjs/parrot-module-device#info=devDependencies)
+[![Gittip](http://img.shields.io/gittip/Kikobeats.svg?style=flat)](https://www.gittip.com/Kikobeats/)
 
 > Automatically detect your device and provide some useful information: vendor, screen properties, browser vendor and version,...
 
 ## Browser Compatibility
 
-[![browser support](https://ci.testling.com/parrotjs/parrot-module-device.png)
-](https://ci.testling.com/parrotjs/parrot-module-device)
+[![browser support](https://ci.testling.com/parrotjs/parrot-module-device.png)](https://ci.testling.com/parrotjs/parrot-module-device)
 
 ## Install
 
