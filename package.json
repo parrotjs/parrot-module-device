@@ -1,7 +1,7 @@
 {
   "name": "parrot-module-device",
   "description": "Automatically detect your device and provide some useful information: vendor, screen properties, browser vendor and version,...",
-  "version": "0.12.16",
+  "version": "1.0.0",
   "author": {
     "name": "Kiko Beats",
     "email": "josefrancisco.verdu@gmail.com",

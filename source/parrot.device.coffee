@@ -1,6 +1,7 @@
+'use strict'
+
 do ->
-parrot.$ ->
-  initialize = ->
+  initialize = do ->
     parser = new UAParser().getResult()
     delete parser.ua
     parser.cpu = parser.cpu.architecture if parser.cpu.architecture?
@@ -27,21 +28,19 @@ parrot.$ ->
 
     parrot.device.screen.pixelRatio = devicePixelRatio if devicePixelRatio?
 
-    parrot.device.detection = do ->
-      el = document.body
-      device = parrot.device
-      el.dataset.lang        = parrot.language
-      el.dataset.os          = device.os.name.toLowerCase()
-      el.dataset.device      = device.type
-      el.dataset.orientation = device.screen.orientation
-      el.dataset.screen      = device.screen.size
-      el.dataset.retina      = (if device.screen.pixelRatio is 1 then false else true)
+    el = document.body
+    device = parrot.device
+    el.dataset.lang        = parrot.language
+    el.dataset.os          = device.os.name.toLowerCase()
+    el.dataset.device      = device.type
+    el.dataset.orientation = device.screen.orientation
+    el.dataset.screen      = device.screen.size
+    el.dataset.retina      = (if device.screen.pixelRatio is 1 then false else true)
+
+    parrot.$(window).on 'resize', initialize
+    parrot.$(window).on 'orientationchange', initialize
 
     parrot.device.noDetection = ->
       el = document.body
       for property in ['lang', 'os', 'device', 'orientation', 'screen', 'retina']
         delete el.dataset[property]
-
-  do initialize
-  parrot.$(window).on 'resize', initialize
-  parrot.$(window).on 'orientationchange', initialize
